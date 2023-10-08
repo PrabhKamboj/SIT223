@@ -12,42 +12,42 @@ pipeline {
         stage('Unit and Integration Tests') {
             steps {
                 // Use your test automation tools (e.g., JUnit) for unit and integration tests
-                echo "Running Unit and Integration Tests..."
+                echo 'Running Unit and Integration Tests...'
             }
         }
 
         stage('Code Analysis') {
             steps {
                 // Use a code analysis tool (e.g., SonarQube) to analyze your code
-                echo "Analysing the Code..."
+                echo 'Analysing the Code...'
             }
         }
 
         stage('Security Scan') {
             steps {
                 // Use a security scanning tool (e.g., OWASP ZAP) to scan your code
-                echo "Performing security scan..."
+                echo 'Performing security scan...'
             }
         }
 
         stage('Deploy to Staging') {
             steps {
                 // Use deployment scripts or tools to deploy to a staging server (e.g., AWS EC2)
-                echo "Deploying to the staging environment..."
+                echo 'Deploying to the staging environment...'
             }
         }
 
         stage('Integration Tests on Staging') {
             steps {
                 // Run integration tests on the staging environment
-                "Running Integration Tests on Staging..."
+                'Running Integration Tests on Staging...'
             }
         }
 
         stage('Deploy to Production') {
             steps {
                 // Use deployment scripts or tools to deploy to a production server (e.g., AWS EC2)
-                "Deploying to production..."
+                'Deploying to production...'
             }
         }
     }
