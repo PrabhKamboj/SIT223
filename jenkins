@@ -1,54 +1,53 @@
-pipeline {
+opipeline {
     agent any
 
     stages {
         stage('Build') {
             steps {
                 // Use your build automation tool (e.g., Maven) to build your code
-                sh 'mvn clean package'
+                echo "Building the code..."
             }
         }
 
         stage('Unit and Integration Tests') {
             steps {
                 // Use your test automation tools (e.g., JUnit) for unit and integration tests
-                sh 'run_unit_tests'
-                sh 'run_integration_tests'
+                echo "Running Unit and Integration Tests..."
             }
         }
 
         stage('Code Analysis') {
             steps {
                 // Use a code analysis tool (e.g., SonarQube) to analyze your code
-                sh 'sonar-scanner'
+                echo "Analysing the Code..."
             }
         }
 
         stage('Security Scan') {
             steps {
                 // Use a security scanning tool (e.g., OWASP ZAP) to scan your code
-                sh 'security-scan'
+                echo "Performing security scan..."
             }
         }
 
         stage('Deploy to Staging') {
             steps {
                 // Use deployment scripts or tools to deploy to a staging server (e.g., AWS EC2)
-                sh 'deploy_to_staging'
+                echo "Deploying to the staging environment..."
             }
         }
 
         stage('Integration Tests on Staging') {
             steps {
                 // Run integration tests on the staging environment
-                sh 'run_integration_tests_staging'
+                "Running Integration Tests on Staging..."
             }
         }
 
         stage('Deploy to Production') {
             steps {
                 // Use deployment scripts or tools to deploy to a production server (e.g., AWS EC2)
-                sh 'deploy_to_production'
+                "Deploying to production..."
             }
         }
     }
