@@ -7,14 +7,6 @@ pipeline {
                 // Use your build automation tool (e.g., Maven) to build your code
                 echo 'Building the code...'
             }
-    post {
-        success {
-            // Send email notification in case of success
-            emailext body: "Pipeline succeeded!",
-                subject: "Pipeline Successful",
-                to: "prabhinau@gmail.com"
-        }
-    }
         }
 
         stage('Unit and Integration Tests') {
@@ -58,6 +50,15 @@ pipeline {
                 echo 'Deploying to production...'
             }
         }
+    post {
+        success {
+            // Send email notification in case of success
+            emailext body: "Pipeline succeeded!",
+                subject: "Pipeline Successful",
+                to: "prabhinau@gmail.com"
+        }
+    }
+
     }
 
 
