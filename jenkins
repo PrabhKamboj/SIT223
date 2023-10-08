@@ -50,7 +50,10 @@ pipeline {
                 echo 'Deploying to production...'
             }
         }
-    post {
+    
+
+    }
+post {
         success {
             // Send email notification in case of success
             emailext body: "Pipeline succeeded!",
@@ -58,8 +61,5 @@ pipeline {
                 to: "prabhinau@gmail.com"
         }
     }
-
-    }
-
 
 }
