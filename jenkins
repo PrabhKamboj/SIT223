@@ -58,7 +58,8 @@ post {
             // Send email notification in case of success
             emailext body: "Pipeline succeeded!",
                 subject: "Pipeline Successful",
-                to: "prabhinau@gmail.com"
+                to: "prabhinau@gmail.com",
+                attachLog : true
         }
     }
 
